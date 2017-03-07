@@ -1,0 +1,18 @@
+<h1>Pseudo-Code: Main process description</h1>
+<ul>
+  <li>Become aligned with the wall</li>
+  <li>Follow wall while still being aligned with wall</li>
+  <li>Check hall effect to see if we've passed tesseract</li>
+  <li>On finding tesseract, use sweeping arm to hit into bucket</li>
+  <ol>
+    <li>Drive set distance</li>
+    <li>Activate sweep arm</li>
+    <li>Wait for tesseract to settle</li>
+  </ol>
+  <li>Initiate spiralling out sequence from the wall, check IR sensor for bearing on beacon</li>
+  <li>Go towards beacon, if heading is lost spin "in place" until we find it again</li>
+  <li>Arrive at beacon, stop a set distance from it</li>
+  <li>Pick up the beacon using the claw (will simultaneously mechanically release cube)</li>
+  <li>Back up set distance</li>
+  <li>Place beacon down onto cube</li>
+</ul>
