@@ -1,0 +1,27 @@
+Pseudocode to find the Bearing Needed to go Towards the Pyramid Beacon
+
+/*
+  Assumes that tesseract has been successfully located and collected, and that the bot is aligned with the wall on the right side to start
+*/
+
+if (front ultrasonic reading < minimum turning radius distance)
+  initiate back up sequence
+  timestamp at this moment
+else initiate flag to start spiralling out and take a timestamp
+
+if (backup && current time < timestamp + interval)
+  put motors into reverse and back up
+if (backup && current time >= timestamp + interval)
+  stop motors
+  initiate spiralling flag 
+  set timestamp to this current moment (not a new timestamp, same one as before)
+if (spiralling && IR not found)
+  slow spiral out from wall, more power to right than left to turn left
+  every [determined interval] increase power drastically to right to tighten spiral but retain oblong shape
+if (spiralling && IR not found && current time >= timestamp + interval)
+  tight spiral to conserve space, rather than weird oblong one that might start hitting walls
+if (spiralling && IR found && front ultrasonic reading < [desired distance from pyramid])
+  back up, but do not continue to spiral
+if (spiralling && IR found && front ultrasonice reading > [acceptable distance])
+  end spiralling sequence
+  start driving forward
