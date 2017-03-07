@@ -1,0 +1,17 @@
+Moving in Alignment with Wall Pseudocode
+
+/*
+  Assumes that ultrasonic sensors are placed in close to the front and back wheels on the side 
+  facing the wall we want to be aligned with, and that this wall will be on the right of the robot
+*/
+
+if (front distance == back distance +/- offset value)
+  continue to drive forward normally
+if (front distance < back distance)
+  increase power duty cycle to right wheel so that robot turns left
+if (front distance > back distance)
+  increase power duty cycle to left wheel so that robot turns right
+  
+/*
+  While this is running, be checking the hall effect sensor to see if it picks up anything
+*/
