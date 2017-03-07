@@ -1,1 +1,24 @@
+Pseudo-code for When the Bot Detects the Tesseract on the Wall
 
+/*
+  Assumes that there is a properly hooked up motor for the sweeping arm, and that desired magnetic intensity value has been found
+*/
+
+if (sensor value >= [magnetic intensity])
+  initiate flag to drive forward to align arm
+  take a timestamp at this very moment
+  
+if (alignment sequence && current time <= timestamp + interval)
+  drive forward, may or may not require alignment
+  
+if (alignment sequence && current time >= timestamp + interval)
+  stop robot 
+  engage sweeping arm to push tesseract into bucket
+  on completion, take another timestamp
+  
+if (alignment sequence && current time <= 2nd timestamp + interval)
+  wait for tesseract to settle
+  
+if (alignment sequence && current > 2nd timestamp + interval)
+  disable alignment sequence flag
+  proceed to spiralling out from wall to find IR beacon
